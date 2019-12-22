@@ -1,6 +1,6 @@
 # Pokemon_Classification
 Pokemon Classification based on CNN, which can classify 5 different classes including Bulbasaur、Charmander、Mewtwo、Pikachu、Squirtle. 
-# Attention
+# In addition
 It's my Design of Neural Networks Course project. 
 # Reference
 1.https://www.pyimagesearch.com/2018/04/16/keras-and-convolutional-neural-networks-cnns/
