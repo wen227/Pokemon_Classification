@@ -2,7 +2,7 @@
 """
 Pokemon classification
 Author:wen227
-Github:
+Github:https://github.com/wen227/Pokemon_Classification
 Reference:
 1.https://www.pyimagesearch.com/2018/04/16/keras-and-convolutional-neural-networks-cnns/
 2.https://www.kaggle.com/trolukovich/predicting-pokemon-with-cnn-and-keras/notebook
@@ -18,22 +18,6 @@ import cv2 as cv
 import os
 from sklearn.metrics import confusion_matrix
 import imutils
-
-
-def cm_result(cm):
-    # Calculate the accuracy of a confusion_matrix,where parameter 'cm' means confusion_matrix.
-    a = cm.shape
-    corrPred = 0
-    falsePred = 0
-
-    for row in range(a[0]):
-        for c in range(a[1]):
-            if row == c:
-                corrPred += cm[row, c]
-            else:
-                falsePred += cm[row, c]
-    Accuracy = corrPred / (cm.sum())
-    return Accuracy
 
 
 # Path
@@ -63,7 +47,7 @@ for file in os.listdir(path_test):
         label = "{}: {:.2f}% ".format(classes[class_id], proba[idx] * 100)
         output = imutils.resize(output, width=400)
         cv.putText(output, label, (25, 25), cv.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
-        cv.imwrite(os.path.join(r'G:\dataset\test_save', file), output)
+        cv.imwrite(os.path.join(r'result', file), output)
 
         # show the output image
         cv.imshow("Output", output)
@@ -72,6 +56,3 @@ for file in os.listdir(path_test):
     except:
         print(os.path.join(path_test, file), '[ERROR] can\'t read the file')
         continue
-
-print('DONE')
-print(len(os.listdir(path_test)))
