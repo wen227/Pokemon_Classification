@@ -5,7 +5,7 @@ Pokemon Classification based on CNN, which can classify five classes including B
 
 dataset : Contains the five classes, each class is its own respective subdirectory.
 
-examples : Contains images that will be using to test our CNN.
+example : Contains images that will be using to test our CNN.
 
 result : Contains result pictures and model.
 
