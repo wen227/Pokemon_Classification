@@ -27,7 +27,7 @@ from Model import CNN
 os.environ["PATH"] += os.pathsep + 'C:/Program Files (x86)/Graphviz2.38/bin/'  # set Graphviz path
 
 # A little bit of data exploration
-path = r'G:\dataset\PokemonTrainData'  # Path to directory which contains classes
+path = r'dataset\PokemonTrainData'  # Path to directory which contains classes
 classes = os.listdir(path)  # List of all classes
 
 # Set
