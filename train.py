@@ -2,7 +2,7 @@
 """
 Pokemon classification
 Author:wen227
-Github:
+Github:https://github.com/wen227/Pokemon_Classification
 Reference:
 1.https://www.pyimagesearch.com/2018/04/16/keras-and-convolutional-neural-networks-cnns/
 2.https://www.kaggle.com/trolukovich/predicting-pokemon-with-cnn-and-keras/notebook
@@ -29,8 +29,6 @@ os.environ["PATH"] += os.pathsep + 'C:/Program Files (x86)/Graphviz2.38/bin/'  #
 # A little bit of data exploration
 path = r'G:\dataset\PokemonTrainData'  # Path to directory which contains classes
 classes = os.listdir(path)  # List of all classes
-# path_test = r'G:\dataset\PokemonTestData'
-# classes_test = os.listdir(path_test)
 
 # Set
 # initialize the number of epochs to train for, initial learning rate,
@@ -87,7 +85,7 @@ datagen.fit(X_train)
 model = CNN.build(width=IMAGE_DIMS[1], height=IMAGE_DIMS[0], depth=IMAGE_DIMS[2], classes=len(classes))
 opt = Adam(lr=INIT_LR, decay=INIT_LR / EPOCHS)
 model.summary()  #
-checkpoint = ModelCheckpoint('best_model.hdf5', verbose=1, monitor='val_accuracy', save_best_only=True)  #
+checkpoint = ModelCheckpoint('result\best_model.hdf5', verbose=1, monitor='val_accuracy', save_best_only=True)  #
 model.compile(loss="categorical_crossentropy", optimizer=opt, metrics=["accuracy"])
 # train the network
 history = model.fit_generator(datagen.flow(X_train, y_train, batch_size=BATCH),
@@ -103,7 +101,7 @@ plt.grid()
 plt.title(f'accuracy')
 plt.xlabel("epoch")
 plt.ylabel("accuracy")
-plt.savefig("acc.png")  #
+plt.savefig("result\acc.png")  #
 plt.show()
 
 plt.plot(history.history['loss'], label='loss')
@@ -113,13 +111,13 @@ plt.grid()
 plt.title(f'loss')
 plt.xlabel("epoch")
 plt.ylabel("loss")
-plt.savefig("loss.png")  #
+plt.savefig("result\loss.png")  #
 plt.show()
 
 # Loading weights from best model
-model.load_weights('best_model.hdf5')  #
+model.load_weights('result\best_model.hdf5')  #
 # Saving all model
-model.save('model.hdf5')  #
+model.save('result\model.hdf5')  #
 # Plot the model
-plot_model(model=model, to_file="model.png",  #
+plot_model(model=model, to_file="result\model.png",  #
            show_layer_names=True, show_shapes=True)
