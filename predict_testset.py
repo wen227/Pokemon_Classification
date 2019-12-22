@@ -2,7 +2,7 @@
 """
 Pokemon classification
 Author:wen227
-Github:
+Github:https://github.com/wen227/Pokemon_Classification
 Reference:
 1.https://www.pyimagesearch.com/2018/04/16/keras-and-convolutional-neural-networks-cnns/
 2.https://www.kaggle.com/trolukovich/predicting-pokemon-with-cnn-and-keras/notebook
@@ -37,9 +37,8 @@ def cm_result(cm):
 
 
 # Path
-path_model = r'model3_1222\best_model.hdf5'
-path_test = r'G:\dataset\PokemonTestData'
-path_image = r'G:\dataset\test'
+path_model = r'result\best_model.hdf5'
+path_test = r'dataset\PokemonTestData'
 # Load the trained convolutional neural network
 model = load_model(path_model)
 # # Set
@@ -85,37 +84,5 @@ cm_kFold = confusion_matrix(y_test, y_pred)
 print(cm_kFold)
 Accuracy = cm_result(cm_kFold)
 print('Accuracy of the Pokemon Clasification is: ', Accuracy)
-
-# we'll mark our prediction as "correct" of the input image filename
-# contains the predicted label text (obviously this makes the
-# assumption that you have named your testing image files this way)
-
-# load the image
-
-# for file in os.listdir(path_image):
-#     image = cv.imread(os.path.join(path_image, file))
-#     # image = cv.imread(path_image)
-#     output = image.copy()
-#
-#     # pre-process the image for classification
-#     image = cv.resize(image, (96, 96))
-#     image = image.astype("float") / 255.0
-#     image = img_to_array(image)
-#     image = np.expand_dims(image, axis=0)
-#
-#     # classify the input image
-#     proba = model.predict(image)[0]
-#     idx = np.argmax(proba)
-#     classes = ['Bulbasaur', 'Charmander', 'Mewtwo', 'Pikachu', 'Squirtle']
-#     class_id = np.argmax(proba)
-#     # build the label and draw the label on the image
-#     label = "{}: {:.2f}% ".format(classes[class_id], proba[idx] * 100)
-#     output = imutils.resize(output)
-#     cv.putText(output, label, (10, 25), cv.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
-#     cv.imwrite(os.path.join(r'G:\dataset\test_save', file), output)
-
-    # show the output image
-    # cv.imshow("Output", output)
-    # cv.waitKey(0)
 
 
