@@ -37,8 +37,8 @@ def cm_result(cm):
 
 
 # Path
-path_model = r'model3_1222\best_model.hdf5'
-path_test = r'G:\dataset\test'
+path_model = r'result\best_model.hdf5'
+path_test = r'example'
 # Load the trained convolutional neural network
 model = load_model(path_model)
 
