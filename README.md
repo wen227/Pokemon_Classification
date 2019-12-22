@@ -1,9 +1,22 @@
 # Pokemon_Classification
-Pokemon Classification based on CNN, which can classify 5 different classes including Bulbasaur、Charmander、Mewtwo、Pikachu、Squirtle. 
+基于卷积神经网络的宝可梦分类.
 
-基于卷积神经网络的宝可梦分类
-# In addition
-It's my Design of Neural Networks Course project. 
+Pokemon Classification based on CNN, which can classify five classes including Bulbasaur、Charmander、Mewtwo、Pikachu、Squirtle. 
+
+dataset : Contains the five classes, each class is its own respective subdirectory.
+
+examples : Contains images that will be using to test our CNN.
+
+result : Contains result pictures and model.
+
+model.py : Convolutional Neural Network model.
+
+train.py : Use this script to train Keras CNN, plot the accuracy/loss.
+
+predict_plot.py : Use this script to predict example images and plot result.
+
+predict_test.py : Use this script to predict textset images and print confusion matrix and accurancy.
+
 # Reference
 1.https://www.pyimagesearch.com/2018/04/16/keras-and-convolutional-neural-networks-cnns/
 
