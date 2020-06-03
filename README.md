@@ -1,6 +1,8 @@
 # Pokemon_Classification
 基于卷积神经网络的宝可梦分类.
 
+Key Words:Convolutional neural network;Image classification;deep learning; Pokémon.
+
 Pokemon Classification based on CNN, which can classify five classes including Bulbasaur、Charmander、Mewtwo、Pikachu、Squirtle. 
 
 dataset : Contains the five classes, each class is its own respective subdirectory.
