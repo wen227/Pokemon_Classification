@@ -9,6 +9,7 @@ Reference:
   These two webs present examples of VGG neural network model.
 3.https://arxiv.org/abs/1409.1556 VGGNet network
 """
+
 # import the necessary packages
 from keras.models import load_model
 from keras.utils import to_categorical
